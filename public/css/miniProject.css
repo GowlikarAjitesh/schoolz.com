@@ -347,7 +347,7 @@ h1 {
 
 #product1 .pro-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     margin: 5rem;
     padding: 5rem;
