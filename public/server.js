@@ -28,11 +28,11 @@ app.use(express.json());
 
 
 app.get('/', (req, res) => {
-    res.sendFile("index.html", { root: "public" });
+    res.sendFile("index.html");
 })
 // sign up
 app.get('/signup', (req, res) => {
-    res.sendFile("signup.html", { root: "public" });
+    res.sendFile("signup.html");
 })
 
 app.post('/signup', (req, res) => {
@@ -86,7 +86,7 @@ app.post('/signup', (req, res) => {
 })
 
 app.get('/login', (req, res) => {
-    res.sendFile('login.html', { root: "public" });
+    res.sendFile('login.html');
 })
 
 app.post('/login', (req, res) => {
@@ -119,22 +119,22 @@ app.post('/login', (req, res) => {
 })
 
 app.get('/products-narayana-boys-regular-shirt', (req, res) => {
-    res.sendFile("sProduct.html", { root: "public" });
+    res.sendFile("sProduct.html");
 })
 app.get('/products-narayana-boys-white-shirt', (req, res) => {
-    res.sendFile("sProduct2.html", { root: "public" });
+    res.sendFile("sProduct2.html");
 })
 
 app.get('/shop', (req, res) => {
-    res.sendFile("shop.html", { root: "public" });
+    res.sendFile("shop.html");
 })
 
 app.get('/help', (req, res) => {
-    res.sendFile("help.html", { root: "public" });
+    res.sendFile("help.html");
 })
 
 app.get('/cart', (req, res) => {
-    res.sendFile("cart.html", { root: "public" });
+    res.sendFile("cart.html");
 })
 
 app.post('/cart', (req, res) => {
@@ -179,11 +179,11 @@ app.post('/submit-suggestion', (req, res) => {
 
 
 app.get('/checkout', (req, res) => {
-    res.sendFile("checkout.html", { root: "public" });
+    res.sendFile("checkout.html");
 })
 //404 route
 app.get('/404', (req, res) => {
-    res.sendFile("404.html", { root: "public" });
+    res.sendFile("404.html");
 })
 
 app.use((req, res) => {
