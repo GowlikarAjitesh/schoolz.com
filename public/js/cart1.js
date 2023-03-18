@@ -163,3 +163,12 @@ checkout.addEventListener('click', () => {
         alert("Your cart is empty");
     }
 });
+
+let today = new Date();
+let tomorrow =  new Date();
+tomorrow.setDate(today.getDate() + 1);
+let oneweek =  new Date();
+oneweek.setDate(today.getDate() + 7);
+console.log(tomorrow);
+let expect = document.getElementById("expectedDate");
+expect.innerHTML = tomorrow.toDateString() + " - " + oneweek.toDateString();
