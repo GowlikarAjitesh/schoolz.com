@@ -134,7 +134,7 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/cart', (req, res) => {
-    res.sendFile("cartnew.html", { root: "public" });
+    res.sendFile("cart.html", { root: "public" });
 })
 
 app.post('/cart', (req, res) => {
