@@ -1,2 +1,0 @@
-# schoolz.in
-# schoolz.in
