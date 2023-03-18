@@ -1,0 +1,36 @@
+
+.user-icon-popup{
+    position: absolute;
+    top: 200%;
+    padding: 1rem;
+    background-color: #fff;
+    width: 10rem;
+    right: -5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    border: 0.1rem solid #191919;
+    display: none;
+}
+
+
+.user-icon-popup.active1{
+    display: block;
+}
+
+.user-icon-popup p{
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    line-height: 2rem;
+}
+.user-icon-popup a{
+    display: block;
+    margin: 2rem auto 0;
+    color: #fff;
+    background-color: orangered;
+    padding: 1rem;
+    width: auto;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}

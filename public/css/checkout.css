@@ -1,0 +1,158 @@
+.row1 {
+    display: -ms-flexbox;
+    /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap;
+    /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -1.6rem;
+}
+.row {
+    display: none;
+    /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap;
+    /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -1.6rem;
+}
+.col-25 {
+    -ms-flex: 25%;
+    /* IE10 */
+    flex: 25%;
+}
+
+.col-50 {
+    -ms-flex: 50%;
+    /* IE10 */
+    flex: 50%;
+}
+
+.col-75 {
+    -ms-flex: 75%;
+    /* IE10 */
+    flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+    padding: 0 1.6rem;
+}
+
+.container {
+    background-color: #f2f2f2;
+    padding: 0.5rem 2rem 1.5rem 2rem;
+    border: 1px solid lightgrey;
+    border-radius: 0.3rem;
+    width: 80%;
+    height: 80%;
+    margin: 5rem 0 0 5rem;
+}
+.container1 {
+    background-color: #f2f2f2;
+    padding: 0.5rem 2rem 1.5rem 2rem;
+    border: 1px solid lightgrey;
+    border-radius: 0.3rem;
+    width: 50%;
+    height: auto;
+    margin: 5rem 0 0 0;
+}
+
+input[type=text] {
+    width: 100%;
+    margin-bottom: 2rem;
+    padding: 1.2rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.3rem;
+}
+
+label {
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.icon-container {
+    margin-bottom: 2rem;
+    padding: 0.7rem 0;
+    font-size: 2.4rem;
+}
+
+.btn-primary {
+    background-color: orangered;
+    color: white;
+    padding: 1.2rem;
+    margin: 1rem 0;
+    border: none;
+    width: 100%;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+/* .btn-primary:hover {
+    background-color: orangered;
+} */
+
+span.price {
+    float: right;
+    color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+    .row {
+        flex-direction: column-reverse;
+    }
+
+    .col-25 {
+        margin-bottom: 2rem;
+    }
+}
+.cart-box {
+    width: 30rem;
+    min-height: 15rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 10rem rgba(0, 0, 0, 0.05);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: 1s;
+    display: none;
+}
+
+.cart-img {
+    display: block;
+    margin: 0rem auto;
+    height: 8rem;
+}
+
+.cart-msg {
+    color: #e24c4b;
+    font-size: 2rem;
+    text-transform: capitalize;
+    text-align: center;
+    line-height: 3rem;
+    font-weight: 500;
+}
+
+.cart-box img {
+    width: 100%;
+    height: 100%;
+
+}
+
+.cart-box.show {
+    display: block;
+    width: 50rem;
+    background-size: cover;
+    opacity: 1;
+
+}
+
+.row1.show{
+    display: block;
+}
