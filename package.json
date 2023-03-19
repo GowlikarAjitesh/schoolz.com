@@ -10,9 +10,20 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
     "express.js": "^1.0.0",
     "firebase": "^9.14.0",
-    "nodemon": "^2.0.20"
+    "knex": "^2.4.2",
+    "nodemon": "^2.0.21",
+    "pg": "^8.10.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GowlikarAjitesh/schoolz.com.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GowlikarAjitesh/schoolz.com/issues"
+  },
+  "homepage": "https://github.com/GowlikarAjitesh/schoolz.com#readme",
   "description": ""
 }

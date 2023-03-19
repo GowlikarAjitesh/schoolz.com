@@ -5,6 +5,7 @@ import bcrypt from "bcrypt";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore, doc, collection, setDoc, getDoc, updateDoc } from "firebase/firestore";
+import bodyParser from "body-parser";
 const firebaseConfig = {
     apiKey: "AIzaSyAXt1tFZsN6Fx4EySzFzSVaL4ZGCg0_kmI",
     authDomain: "miniproject-fde89.firebaseapp.com",
@@ -20,6 +21,11 @@ const firebaseConfig = {
 const firebase = initializeApp(firebaseConfig);
 const dp = getFirestore();
 // init server
+
+const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser');
+const knex = require('knex');
 const app = express();
 
 //middle wares
