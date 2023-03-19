@@ -111,7 +111,7 @@
             let email = document.getElementById('email').value;
             let cart = JSON.parse(localStorage.getItem('cart'));
             let s = "";
-            if(cart.length == null){
+            if(cart== null){
                 alertBox("your cart is empty");
             }
             else{
