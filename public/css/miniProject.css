@@ -1,0 +1,1164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Russo One', 'Montserrat';
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+}
+
+button.normal {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 1.5rem 3rem;
+    color: #000;
+    background-color: #fff;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+
+button.white {
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 1.1rem 1.8rem;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0.1rem solid #fff;
+    outline: none;
+    transition: 0.2s;
+}
+
+h1 {    
+    font-size: 8.2rem;
+    line-height: 9.3rem;
+    color: #222;
+}
+
+.section-p1 {
+    padding: 4rem 8rem;
+}
+
+.section-m1 {
+    margin: 4rem 0;
+}
+
+/* ---------------------------------------  Header  ----------------------------------------------------------- */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 8rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+    text-transform: capitalize;
+    flex-wrap: wrap;
+}
+
+/*  --------------------------------------------  Logo  ---------------------------------------------------------*/
+
+#brand-logo{
+    padding: 1rem;
+    margin: 1rem;
+    width: auto;
+    height: auto;
+}
+#logoAnchor {
+    text-decoration: none;
+    color: orangered;
+}
+
+#logo-img {
+    width: auto;
+    height: 3.5rem;
+}
+
+/* ----------------------------------------   search box   --------------------------------------------------------*/
+
+#search-box {
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45rem;
+    height: 4rem;
+}
+
+.search-bar {
+    width:45rem;
+    height: 4rem;
+    max-width: auto;
+    border: 0.1px solid orangered;
+    display: flex;
+    align-items: center;
+    border-radius: 0.4rem;
+}
+
+.search-bar input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    color: black;
+    padding: 0 0 0 1.5rem;
+    border-radius: 0.4rem;
+    white-space: nowrap;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+::placeholder {
+    color: #393939;
+}
+
+.search-bar button {
+    background: transparent;
+    border: 0;
+    outline: none;
+    color: black;
+    padding: 0 1rem 0 1rem;
+    border-radius: 0.4rem;
+    white-space: nowrap;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.search-bar button i {
+    width: 2.5rem;
+    color: rgb(0, 0, 0);
+}
+
+.search-bar button i:hover {
+    width: 2.5rem;
+    color: orangered;
+}
+
+
+/* ------------------------------------------  Navigation Bar  -------------------------------------------------- */
+
+#navigation-bar{
+    padding: 1rem;
+    margin: 1rem;
+    width: auto;
+    height: auto;
+}
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 2rem;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #222;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: orangered;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 1.725rem;
+    height: 0.2rem;
+    background: orangered;
+    position: absolute;
+    bottom: -0.4rem;
+    left: 2rem;
+}
+
+#mobile {
+    display: none;
+    align-items: center;
+}
+
+#close {
+    display: none;
+}
+
+.cart, .user{
+    position: relative;
+}
+.cart-item-count{
+    color: orangered;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0.8rem;
+    left: 3rem;
+}
+/* ------------------------------------------  HERO  ---------------------------------------------------------- */
+
+#hero {
+    background-image: url(../img/logo/heroNew.png);
+    height: 70rem;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+}
+#hero-text{
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #222;
+    width: 100%;
+    margin: 5rem;
+    height: 55rem;
+    padding: 15rem 3rem;
+    margin: 7rem;
+}
+
+#hero-text h4 {
+    padding-bottom: 0.8rem;
+}
+
+#hero-text h1 {
+    color: orangered;
+}
+
+#hero-text p {
+    color: gray;
+}
+
+#hero-text a {
+    background-image: url("../img/button.png");
+    background-color: transparent;
+    color: orangered;
+    border: 0;
+    padding: 1.4rem 8rem 141.4rem 6.5rem;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 2rem 0;
+}
+
+/* ----------------------------------------- Features box css -------------------------------------------------- */
+
+#feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 3rem;
+    padding: 3rem;
+}
+
+#feature .fe-box {
+    width: 15rem;
+    text-align: center;
+    padding: 1rem 1rem;
+    box-shadow: rgb(0 0 0 / 3%) 2rem 2rem 3.4rem;
+    border: 0.2rem solid rgb(203, 203, 203);
+    border-radius: 0.4rem;
+    margin: 1rem 1rem;
+}
+
+#feature .fe-box:hover {
+    box-shadow: 1rem 1rem 5.4rem rgba(221, 142, 62, 0.116);
+}
+
+#feature .fe-box img {
+    width: 100%;
+    margin-bottom: 3rem;
+
+}
+
+#feature .fe-box h6 {
+    display: inline-block;
+    font-size: 1.4rem;
+    padding: 1rem;
+    line-height: 1;
+    border-radius: 0.4rem;
+    color: white;
+    background-color: darkblue;
+}
+
+#feature .fe-box:nth-child(2) h6 {
+    background-color: purple;
+}
+
+#feature .fe-box:nth-child(3) h6 {
+    background-color: green;
+}
+
+#feature .fe-box:nth-child(4) h6 {
+    background-color: darkblue;
+}
+
+#feature .fe-box:nth-child(5) h6 {
+    background-color: rgb(58, 0, 128);
+}
+
+#feature .fe-box:nth-child(6) h6 {
+    background-color: orangered;
+}
+
+/* ----------------------------------------  Product css  -------------------------------------------------------- */
+
+#product1 {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 3rem;
+    padding: 3rem;
+    font-size: 2rem;
+}
+
+#product1 .pro-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 5rem;
+    padding: 5rem;
+    width: 100%;
+}
+
+#product1 .pro {
+    width: 2rem;
+    min-width: 27rem;
+    padding: 1rem 1.2rem;
+    border: 0.1rem solid #e7dacc;
+    border-radius: 2.5rem;
+    cursor: pointer;
+    box-shadow: 2rem 2rem 3rem rgba(0, 0, 0, 0.02);
+    margin: 1.5rem 0;
+    transition: 0.2s ease;
+    position: relative;
+}
+
+#product1 .pro:hover {
+    box-shadow: 2rem 2rem 3rem rgba(0, 0, 0, 0.06);
+}
+
+#product1 .pro img {
+    width: 100%;
+    height: 25rem;
+    border-radius: 2rem;
+}
+
+#product1 .pro .des {
+    text-align: start;
+    padding: 1rem 0;
+
+}
+
+#product1 .pro .des span {
+    color: #606063;
+}
+
+#product1 .pro .des h5 {
+    padding-top: 0.7rem;
+    color: #1a1a1a;
+    font-size: 1.4rem;
+}
+
+#product1 .pro .des i {
+    font-size: 1.2rem;
+    color: rgb(243, 181, 25);
+}
+
+#product1 .pro .des h4 {
+    padding-top: 0.7rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: orangered;
+}
+
+#product1 .pro .cart {
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    border-radius: 5rem;
+    background-color: #f4e6e2;
+    font-weight: 500;
+    color: orangered;
+    border: 0.1rem solid #e5d3ce;
+    position: absolute;
+    bottom: 2rem;
+    right: 1rem;
+}
+
+/* --------------------------------------------- Banner css ----------------------------------------------------- */
+
+#banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(../img/banner/b2.jpg);
+    width: 100%;
+    height: 30rem;
+    background-size: cover;
+    background-position: center;
+    margin: 3rem 0;
+    padding: 3rem;
+    flex-wrap: wrap;
+}
+
+#banner h4 {
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+#banner h2 {
+    color: #fff;
+    font-size: 3rem;
+    padding: 1rem 0;
+}
+
+#banner h2 span {
+    color: red;
+}
+
+#banner button:hover {
+    background-color: orangered;
+    color: white;
+}
+
+/* -------------------------------------------  Small Banner  --------------------------------------------------- */
+
+#sm-banner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 3rem;
+    padding: 3rem;
+}
+
+#sm-banner .banner-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url(../img/banner/sm1.jpg);
+    min-width: 31.975rem;
+    height: 35rem;
+    width: 45%;
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    margin: 1rem;
+}
+
+#sm-banner .banner-box2 {
+    background-image: url("../img/banner/sm2.jpg");
+}
+
+#sm-banner h4 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+#sm-banner h2 {
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 800;
+}
+
+#sm-banner span {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding-bottom: 1.5rem;
+}
+
+#sm-banner .banner-box:hover button {
+    background-color: orangered;
+    border: 1px solid #f4e6e2;
+}
+
+/* --------------------------------------------------------  Small Banner's 3  ---------------------------------------------------------------------- */
+
+#banner3 .banner-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url(../img/banner2.jpg);
+    min-width: 30%;
+    height: 25rem;
+    background-size: cover;
+    background-position: center center;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+#banner3 h2 {
+    color: #fff;
+    font-weight: 900;
+    font-size: 2.2rem;
+}
+
+#banner3 h3 {
+    color: red;
+    font-weight: 900;
+    font-size: 2.2rem;
+}
+
+#banner3 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 3rem 3rem;
+    margin: 3rem;
+}
+
+#banner3 .banner-box2 {
+    background-image: url("../img/banner1.jpg");
+}
+
+#banner3 .banner-box3 {
+    background-image: url("../img/banner3.jpg");
+}
+
+/* --------------------------------------  News Letter Sign Up  -------------------------------------------------- */
+
+#newsLetter {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    background-image: url(img/banner/b14.png);
+    background-repeat: no-repeat;
+    background-position: 23% 30%;
+    background-color: rgb(4, 30, 66);
+    margin: 3rem 0px;
+    padding: 3rem;
+    width: auto;
+}
+
+#newsLetter h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+}
+
+#newsLetter p {
+    font-size: 14px;
+    font-weight: 700;
+    color: rgb(165, 162, 162);
+}
+
+#newsLetter p span {
+    color: #ffbd27;
+}
+
+#newsLetter input {
+    /* height: 4.5rem; */
+    padding: 0px 1.25em;
+    font-size: 1.4rem;
+    width: 100%;
+    border: 0.1rem solid transparent;
+    border-radius: 0.4rem 0 0 0.4rem;
+    outline: none;
+}
+
+#newsLetter button {
+    background-color: orangered;
+    color: #fff;
+    white-space: nowrap;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#newsLetter .form {
+    display: flex;
+    width: 40%;
+}
+
+/* --------------------------------------------------  Footer  --------------------------------------------------- */
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 2.5rem;
+    background-color: rgb(241, 241, 241);
+    margin-top: 6rem;
+    padding: 4rem;
+    height: 50rem;
+}
+
+footer .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+footer .logo {
+    margin-bottom: 1.3rem;
+    height: 4rem;
+}
+
+footer h4 {
+    font-size: 1.4rem;
+    padding-bottom: 2rem;
+}
+
+footer p {
+    font-size: 1.3rem;
+    margin: 0 0 0.8rem 0;
+}
+
+footer a {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+footer .follow {
+    margin-top: 2rem;
+}
+
+footer .follow i {
+    color: #465b54;
+    padding-right: 0.4rem;
+    cursor: pointer;
+}
+
+footer .install .row img {
+    border: 0.1rem solid #088178;
+    border-radius: 0.6rem;
+}
+
+footer .install img {
+    margin: 1rem 0 1.5rem 0;
+}
+
+footer .follow i:hover,
+footer a:hover {
+    color: orangered;
+}
+
+footer .copyright {
+    width: 100%;
+    text-align: center;
+    padding-top: 5rem;
+}
+
+/*  -------------------------------------  SHOP PAGE CSS  ------------------------------------------------------- */
+
+#shop-hero{
+    background-image: url("../img/banner/b4.jpg");
+    width: 100%;
+    height: 30rem;
+    background-position: center;
+    color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #d3d3d3;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 1.4rem;
+    font-size: 1.5rem;
+}
+#shop-hero h2, #shop-hero p{
+    margin: 14px;
+}
+#shop-pagination{
+    text-align: center;
+}
+#shop-pagination a{
+    text-decoration: none;
+    background-color: orangered;
+    padding: 15px 20px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 600;
+}
+#shop-pagination a i{
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#prodetails{
+    display: flex;
+    margin-top: 20px;
+    font-size: 2rem;
+}
+#prodetails .single-pro-img {    
+    width: 33%;
+    /* margin-right: 15rem; */
+    margin: 0rem 5rem;
+}
+.small-img-group{
+    display: flex;
+    justify-content: space-evenly;
+}
+.small-img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+#prodetails .single-pro-details{
+    width: 50%;
+    padding-top: 30px;
+}
+#prodetails .single-pro-details h4{
+    padding: 40px 0 20px 0;
+}
+#prodetails .single-pro-details h2{
+    margin: 2% 0;
+    font-size: 26px;
+}
+#prodetails .single-pro-details select{
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+#pro-shopping{
+    display: flex;
+    align-items: center;
+}
+#pro-shopping input {
+    width: 50px;
+    height: 47px;
+    text-align: center;
+    font-size: 16px;
+    margin-right: 3%;
+}
+#pro-shopping button{
+    background-color: orangered;
+    color: white;
+}
+#prodetails .single-pro-details span{
+    line-height: 25px;
+    font-weight: lighter;
+    color: #636161;
+}
+
+.notallowed{
+    cursor: not-allowed;
+}
+/* -------------------blog - page css ----------------------------*/
+#blog-hero{
+    background-image: url("img/banner/b19.jpg");
+    width: 100%;
+    height: 20rem;
+    color: #fff;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 1.4rem;
+}
+#blog-hero h2, #blog-hero p{
+    margin: 14px;
+}
+
+#blogs{
+    padding: 15rem 15rem 0 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 2rem;
+}
+
+#blogs .blog-box{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding-bottom: 10rem;
+}
+#blogs .blog-img{
+    width:50%;
+    margin-right: 4rem;
+}
+#blogs img{
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+}
+#blogs .blog-details{
+    width: 50%;
+}
+#blogs .blog-details p{
+    color:#5d5d5d;
+}
+#blogs .blog-details a{
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #000;
+    font-weight: 700;
+    position: relative;
+    transition: 0.2s;
+}
+#blogs .blog-details a::after{
+    content: "";
+    width: 5rem;
+    height: 0.1rem;
+    background-color: #000;
+    position: absolute;
+    top: 0.4rem;
+    right: -6rem;
+}
+#blogs .blog-details a:hover{
+    color: orangered;
+}
+#blogs .blog-details a:hover::after{
+    background-color: orangered;
+}
+
+#blogs .blog-box h1{
+    position: absolute;
+    top: -6.5rem;
+    left: 0;
+    font-size: 7rem;
+    font-weight: 700;
+    color: #e79781;
+    z-index: -9;
+}
+/* -------------------help - page css ----------------------------*/
+#help-hero, #cart-hero{
+    background-image: url(../img/banner/b3.png);
+    width: 100%;
+    height: 30rem;
+    background-position: center;
+    color: black;
+    background-size: 20%;
+    background-position: 90rem automatically;
+    background-position-x: 20%;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    border-bottom: 1rem solid orangered;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 1.4rem;
+    font-size: 1.5rem;
+}
+#help-hero h2, #help-hero p{
+    margin: 14px;
+}
+#help-head {
+    display: flex;
+    align-items: center;
+}
+#help-head img{
+    width: 50%;
+    height: auto;
+}
+#help-head div{
+    padding-left: 40px;
+    color: #5d5d5d;
+    font-size: 2rem;
+}
+#help-head div h2{
+    color: #000;
+}
+/* -------------------help - page part- 2 ( contact us)css ----------------------------*/
+
+#contact-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#contact-details .details{
+    width: 40%;
+}
+#contact-details .details span, #form-details form span{
+    font-size: 12px;
+}
+#contact-details .details h2, #form-details form h2{
+    font-size: 26px;
+    line-height: 35px;
+    padding: 20px 0;
+}
+#contact-details .details h3{
+    font-size: 16px;
+    padding-bottom: 15px;
+}
+#contact-details .details li{
+    list-style: none;
+    display: flex;
+    padding: 10px 0;
+    color: #5d5d5d;
+}
+#contact-details .details li i{
+    font-size: 14px;
+    padding-right: 22px;
+    color: #000;
+}
+#contact-details .details li p{
+    margin: 0;
+    font-size: 14px;
+}
+/* -------------------help - page part- 2 ( contact us-->form)css ----------------------------*/
+
+#form-details{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    padding: 80px;
+    border: 1px solid #e1e1e1;
+}
+#form-details form{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+#form-details form input, #form-details form textarea{
+    width: 100%;
+    padding: 12px 15px;
+    outline: none;
+    margin: 0 0 20px 0;
+    border: 1px solid #e1e1e1;
+}
+#form-details form button{
+    background-color: orangered;
+    color: white;
+}
+
+#form-details .people div{
+    padding-bottom: 25px;
+    display: flex;
+    align-items: flex-start;
+}
+#form-details .people div img{
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 3rem;
+}
+#form-details .people div p{
+    margin: 0;
+    font-size: 13px;
+    line-height: 25px;
+}
+#form-details .people div p span{
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+/* ----------------------------------cart css--------------------------------------------- */
+#cart-hero{
+    background-image: url("../img/banner/b1.jpg");
+    background-size: cover;
+    border: none;
+    color: white;
+}
+#cart table{
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    white-space: nowrap;
+}
+#cart table img{
+    width: 70px;
+}
+#cart table td:nth-child(1){
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+#cart table td:nth-child(2){
+    width: 150px;
+    text-align: center;
+}
+#cart table td:nth-child(3){
+    width: 200px;
+    text-align: center;
+}
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6){
+    width: auto;
+    text-align: center;
+}
+#cart table td:nth-child(5) input{
+    width: 20%;
+    height: 20%;
+    text-align: center;
+    padding: 10px 10px;
+}
+#cart table thead{
+    border: 1px solid #d3d3d3;
+    border-left: none;
+    border-right: none;
+}
+#cart table thead td{
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 18px 0;
+}
+#cart table tbody tr td{
+    padding: 15px;
+}
+#cart table tbody td{
+    font-size: 13px;
+}
+#cart-add{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#coupon{
+    width: 50%;
+    margin-bottom: 30px;
+}
+#coupon h3, #sub-total h3{
+    padding-bottom: 15px;
+}
+#coupon input{
+    padding: 10px 20px;
+    outline: none;
+    width: 60%;
+    margin-right: 10px;
+    border: 1px solid #d3d3d3;
+}
+#coupon button, #sub-total button{
+    background-color: orangered;
+    color: white;
+    padding: 12px 20px;
+}
+#sub-total{
+    width: 50%;
+    margin-bottom: 30px;
+    padding: 10px 10px;
+    border: 1px solid #d3d3d3;
+}
+#sub-total table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+#sub-total table td{
+    width: 50%;
+    border: 1px solid #d3d3d3;
+    padding: 10px;
+    font-size: 13px;
+}
+
+/* ---------------------------- acccount css --------------------------------------- */
+
+#account-form{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    padding: 30px;
+    border: 1px solid #e1e1e1;
+}
+#account-form div{
+    margin: 1%;
+    height: 50%;
+    width: 100%;
+    text-align: center;
+}
+#signup form, #login form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    width: 100%;
+    padding: 3%;
+    align-items: center;
+    height: 100%;
+
+}
+#signup form input, #login form input{
+    margin: auto;
+    width: 100%;
+    padding: 2%;
+    margin: 3%;
+}
+#signup form button, #login form button{
+    background-color: orangered;
+    color: white;
+    width: 20%;
+    height: 20%;
+}
+#signup {
+    border-right: 6px solid orangered;
+    height: 500px;
+  }
+/* #login form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: auto;
+} 
+#account-form{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    padding: 30px;
+    border: 1px solid #e1e1e1;
+} */
+/* #signup, #login{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+#form-details form input, #form-details form textarea, #signup form input, #login form input{
+    width: 100%;
+    padding: 12px 15px;
+    outline: none;
+    margin: 0 0 20px 0;
+    border: 1px solid #e1e1e1;
+}
+#form-details form button{
+    background-color: orangered;
+    color: white;
+} */
+
+/* ----------------------  product page css  -------------------- */

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store: Checkout</title>
+
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/add-product.css">
+    <link rel="stylesheet" href="css/miniproject.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:ital,wght@1,300&family=Russo+One&display=swap');
+    </style>
+    <script src="https://kit.fontawesome.com/e12d5f09e9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="css/miniProject.css">
+</head>
+
+<body>
+    <section id="header"></section>
+    <div class="cart-box">
+        <img src="img/ordergif.gif" alt="" class="cart-img">
+
+    </div>
+    <div class="row show">
+        <div class="col-75">
+            <div class="container">
+                <form action="/action_page.php">
+
+                    <div class="row1 ">
+                        <div class="col-50">
+                            <h3 style="margin-bottom: 1rem;">Billing Address</h3>
+                            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                            <input type="text" id="fname" name="firstname" placeholder="Full Name">
+                            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                            <input type="text" id="email" name="email" placeholder="Email">
+                            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                            <input type="text" id="adr" name="address" placeholder="Address">
+                            <label for="city"><i class="fa fa-institution"></i> City</label>
+                            <input type="text" id="city" name="city" placeholder="City">
+
+                            <div class="row">
+                                <div class="col-50">
+                                    <label for="state">State</label>
+                                    <input type="text" id="state" name="state" placeholder="State">
+                                </div>
+                                <div class="col-50">
+                                    <label for="zip">Postal Code</label>
+                                    <input type="text" id="zip" name="zip" placeholder="Postal Code">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-50">
+                  <h3>Payment</h3>
+                  <label for="fname">Accepted Cards</label>
+                  <div class="icon-container">
+                    <i class="fa fa-cc-visa" style="color:navy;"></i>
+                    <i class="fa fa-cc-amex" style="color:blue;"></i>
+                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                    <i class="fa fa-cc-discover" style="color:orange;"></i>
+                  </div>
+                  <label for="cname">Name on Card</label>
+                  <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                  <label for="ccnum">Credit card number</label>
+                  <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                  <label for="expmonth">Exp Month</label>
+                  <input type="text" id="expmonth" name="expmonth" placeholder="September">
+      
+                  <div class="row">
+                    <div class="col-50">
+                      <label for="expyear">Exp Year</label>
+                      <input type="text" id="expyear" name="expyear" placeholder="2018">
+                    </div>
+                    <div class="col-50">
+                      <label for="cvv">CVV</label>
+                      <input type="text" id="cvv" name="cvv" placeholder="352">
+                    </div>
+                  </div>
+                </div> -->
+
+                    </div>
+                    <label>
+                        <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                    </label>
+                    <button type="button" class="btn-primary" style="margin-top: 4rem;" id="placeOrder">Place
+                        order</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-25">
+            <div class="container1">
+                <h4>NOTE:
+                </h4>
+                <p>Cash on delivery</p>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="js/checkout.js"></script> -->
+    <script>
+        let btn = document.querySelector('.btn-primary');
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            let email = document.getElementById('email').value;
+            let cart = JSON.parse(localStorage.getItem('cart'));
+            let s = "";
+            if(cart.length == 0){
+                alertBox("your cart is empty");
+            }
+            else{
+                for (let i = 0; i < cart.length; i++) {
+                    s +=  "<img src='${cart[i].productImage}'><br> "+cart[i].productName+":"+cart[i].shortDes+"<br> Price: "+cart[i].price+"<br> Size: "+cart[i].size+"<br>"+"<hr>";
+                }
+            }
+            console.log(email);
+            Email.send({
+                SecureToken: "2504ab39-45a6-423f-b079-4592c0f38033",
+                To: email.toString(),
+                From: 'ajiteshgowlikar@gmail.com',
+                Subject: "Your order has been successfully placed",
+                Body: s
+            }).then(
+                message => alert(message)
+            )
+            let alertBox = document.querySelector('.cart-box');
+            let cartbox = document.querySelector('.row');
+            setTimeout(() => {
+                alertBox.classList.add('show');
+                cartbox.classList.remove('show');
+                localStorage.clear();
+                setTimeout(() => {
+                    sessionStorage.removeItem("cart");
+                    location.replace("/");
+                }, 1000);
+            }, 1000);
+
+        });
+    </script>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script src="js/nav.js"></script>
+    <script src="js/nav_popup.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/common.js"></script>
+</body>
+
+</html>
