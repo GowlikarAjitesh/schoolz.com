@@ -19,7 +19,19 @@ else {
     actionBtn.addEventListener('click', () => location.href = '/login');
 }
 const logout = () => {
-    let cart = JSON.parse(sessionStorage.getItem('cart'));
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    if(cart != null){
+        for(var i=0; i < cart.length; i++){
+            sendData("/cart", {
+                item: cart[i].item,
+                name: cart[i].name, 
+                size: cart[i].size, 
+                price: cart[i].price, 
+                image: cart[i].image, 
+                shortDes: cart[i].shortDes
+            })
+        }
+    }   localStorage.clear();
         sessionStorage.clear();
         location.reload();
 }

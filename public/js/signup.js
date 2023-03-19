@@ -46,7 +46,7 @@ submitBtn.addEventListener('click', () => {
         }
         else{
             loader.style.display='block';
-            sendData('/login', {
+            sendData('/login.html', {
                 email: email.value,
                 password: password.value
             })

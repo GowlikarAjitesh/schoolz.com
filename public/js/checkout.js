@@ -1,6 +1,7 @@
 var btn = document.querySelector("placeOrder");
 var email = document.getElementById("email").value;
 var cart = localStorage.getItem('cart');
+var tbill = document.getElementById('total_cart_amt');
 btn.addEventListener('click', function(e){
     e.preventDefault()
     console.log('hii');
@@ -9,7 +10,7 @@ btn.addEventListener('click', function(e){
         To : 'ajiteshgowlikar@gmail.com',
         From : 'ajiteshgowlikar@gmail.com',
         Subject : "Your order has been successfully placed",
-        Body : cart
+        Body : cart + 
     }).then(
       message => alert(message)
     );

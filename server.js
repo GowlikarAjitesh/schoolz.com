@@ -21,8 +21,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebase = initializeApp(firebaseConfig);
 const dp = getFirestore();
-const user = dp.collection('users');
-module.exports = users;
+//const user = dp.collection('users');
+//module.exports = users;
 // init server
 
 // const path = require('path');
@@ -150,10 +150,6 @@ app.post('/cart', (req, res) => {
     let { item, name, size, price, image, shortDes, count } = req.body;
     const products = collection(dp, "products");
     getDoc(doc(products, name)).then(products => {
-        if (products.exists()) {
-            return res.json({ 'alert': 'email already exits' })
-        }
-        else{
             setDoc(doc(products, name), req.body).then(data => {
                 res.json({
                     item: req.body.item,
@@ -161,11 +157,9 @@ app.post('/cart', (req, res) => {
                     size: req.body.size,
                     price: req.body.price,
                     image: req.body.image,
-                    shortDes: req.body.shortDes,
-                    count: req.body.count
+                    shortDes: req.body.shortDes
                 })
             })
-        }
     })
 })
 
