@@ -1,5 +1,28 @@
 import express from "express";
 import bcrypt from "bcrypt";
+
+//const firebase = require("firebase");
+// Import the functions you need from the SDKs you need// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getFirestore, doc, collection, setDoc, getDoc, updateDoc } from "firebase/firestore";
+import bodyParser from "body-parser";
+const firebaseConfig = {
+    apiKey: "AIzaSyAXt1tFZsN6Fx4EySzFzSVaL4ZGCg0_kmI",
+    authDomain: "miniproject-fde89.firebaseapp.com",
+    projectId: "miniproject-fde89",
+    storageBucket: "miniproject-fde89.appspot.com",
+    messagingSenderId: "39507458781",
+    appId: "1:39507458781:web:19c545e134277ec090f934",
+    measurementId: "G-M3J50LBW7S"
+};
+
+
+// Initialize Firebase
+const firebase = initializeApp(firebaseConfig);
+const dp = getFirestore();
+const user = dp.collection('users');
+module.exports = users;
 // init server
 
 // const path = require('path');
@@ -124,20 +147,25 @@ app.get('/cart', (req, res) => {
 })
 
 app.post('/cart', (req, res) => {
-    const { item, name, size, price, image, shortDes, count } = req.body;
+    let { item, name, size, price, image, shortDes, count } = req.body;
     const products = collection(dp, "products");
     getDoc(doc(products, name)).then(products => {
-        setDoc(doc(products, name), req.body).then(data => {
-            res.json({
-                item: req.body.item,
-                name: req.body.name,
-                size: req.body.size,
-                price: req.body.price,
-                image: req.body.image,
-                shortDes: req.body.shortDes,
-                count: req.body.count
+        if (products.exists()) {
+            return res.json({ 'alert': 'email already exits' })
+        }
+        else{
+            setDoc(doc(products, name), req.body).then(data => {
+                res.json({
+                    item: req.body.item,
+                    name: req.body.name,
+                    size: req.body.size,
+                    price: req.body.price,
+                    image: req.body.image,
+                    shortDes: req.body.shortDes,
+                    count: req.body.count
+                })
             })
-        })
+        }
     })
 })
 
