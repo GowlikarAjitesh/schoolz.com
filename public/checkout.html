@@ -112,7 +112,7 @@
             let cart = JSON.parse(localStorage.getItem('cart'));
             let s = "";
             if(cart== null){
-                alertBox("your cart is empty");
+                location.replace('/cart');
             }
             else{
                 for (let i = 0; i < cart.length; i++) {
