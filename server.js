@@ -12,7 +12,7 @@ const app = express();
 //middle wares
 app.use(express.static("public"));
 app.use(express.json());
-
+app.use(cors());
 
 app.get('/', (req, res) => {
     res.sendFile("index.html", { root: "public" });
