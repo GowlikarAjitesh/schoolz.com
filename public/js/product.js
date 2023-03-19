@@ -10,6 +10,7 @@ cartBtn.addEventListener('click', () => {
         let shortDes = document.querySelector('.product-des');
         let price = document.querySelector('.price1');
         let productImage = document.querySelector('.product-image');
+        let quan = document.querySelector("quantity");
         if (size == "Select Size") {
             alert("Select a size");
         }
@@ -17,15 +18,19 @@ cartBtn.addEventListener('click', () => {
             let cart = [];
             if (sessionStorage.getItem('cart')) {
                 cart = JSON.parse(sessionStorage.getItem('cart'));
-                c = cart.length + 1;
+                c = cart.length + quan + 1;
+            }
+            if(localStorage.getItem('cart')){
+                cart = JSON.parse(localStorage.getItem('cart'));
+                c = cart.length + quan + 1;
             }
             cart.push(product = { 'item': 1, 'productName': productName.innerHTML, 'size': size, 'price': price.innerHTML, 'productImage': productImage.src, 'shortDes': shortDes.innerHTML, "count": c });
             console.log(cart);
-            sessionStorage.setItem('cart', JSON.stringify(cart));
+            localStorage.setItem('cart', JSON.stringify(cart));
 
             const updateNavCartCounter = () => {
                 let cartCounter = document.querySelector('.cart-item-count');
-                let cartItem = JSON.parse(sessionStorage.getItem('cart'));
+                let cartItem = JSON.parse(localStorage.getItem('cart'));
                 if (cartItem == null) {
                     cartCounter.innerHTML = '00';
                 }

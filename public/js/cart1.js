@@ -54,7 +54,7 @@ const setCartProducts = () => {
     const cartContainer = document.querySelector('.card123');
     var product_total_amt = document.getElementById('product_total_amt');
     var total_cart_amt = document.getElementById('total_cart_amt');
-    let cart = JSON.parse(sessionStorage.getItem('cart'));
+    let cart = JSON.parse(localStorage.getItem('cart'));
     if (cart == null || !cart.length) {
         cartContainer.innerHTML += `<img src="img/empty-cart.png" class="empty-img" alt="">`
     }
@@ -112,7 +112,7 @@ const increaseNumber = (incdec, itemprice, money) => {
 const remove = (product) => {
     console.log(product.id);
     var str1 = product.id;
-    let cart1 = JSON.parse(sessionStorage.getItem('cart'));
+    let cart1 = JSON.parse(localStorage.getItem('cart'));
     for (let i = 0; i < cart1.length; i++) {
         var val = cart1[i].count;
         var str2 = "remove" + val;
@@ -124,7 +124,7 @@ const remove = (product) => {
             break;
         }
     }
-    sessionStorage.setItem('cart', JSON.stringify(cart1));
+    localStorage.setItem('cart', JSON.stringify(cart1));
     location.reload();
 }
 let dc = 0;
@@ -163,7 +163,6 @@ checkout.addEventListener('click', () => {
         alert("Your cart is empty");
     }
 });
-
 let today = new Date();
 let tomorrow =  new Date();
 tomorrow.setDate(today.getDate() + 1);

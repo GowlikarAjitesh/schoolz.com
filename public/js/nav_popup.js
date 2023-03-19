@@ -40,7 +40,7 @@ const sendData = (path, data) => {
 
 const updateNavCartCounter = () => {
     let cartCounter = document.querySelector('.cart-item-count');
-    let cartItem = JSON.parse(sessionStorage.getItem('cart'));
+    let cartItem = JSON.parse(localStorage.getItem('cart'));
     if (cartItem == null) {
         cartCounter.innerHTML = '00';
     }

@@ -55,7 +55,6 @@ h1 {
 /* ---------------------------------------  Header  ----------------------------------------------------------- */
 #header {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     height: 8rem;
@@ -67,6 +66,7 @@ h1 {
     top: 0;
     left: 0;
     text-transform: capitalize;
+    flex-wrap: wrap;
 }
 
 /*  --------------------------------------------  Logo  ---------------------------------------------------------*/
@@ -159,9 +159,9 @@ h1 {
 }
 #navbar {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 #navbar li {
@@ -227,10 +227,10 @@ h1 {
     background-repeat: no-repeat;
     background-attachment: scroll;
     display: flex;
-    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    
+    flex-wrap: wrap;
+
 }
 #hero-text{
     font-size: 2rem;
@@ -337,7 +337,6 @@ h1 {
 #product1 {
     text-align: center;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     flex-direction: column;
     margin: 3rem;
@@ -423,7 +422,6 @@ h1 {
 
 #banner {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -435,6 +433,7 @@ h1 {
     background-position: center;
     margin: 3rem 0;
     padding: 3rem;
+    flex-wrap: wrap;
 }
 
 #banner h4 {
@@ -461,7 +460,7 @@ h1 {
 
 #sm-banner {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
     margin: 3rem;
     padding: 3rem;
@@ -469,7 +468,6 @@ h1 {
 
 #sm-banner .banner-box {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -515,7 +513,6 @@ h1 {
 
 #banner3 .banner-box {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -542,7 +539,7 @@ h1 {
 
 #banner3 {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
     padding: 3rem 3rem;
     margin: 3rem;
@@ -560,7 +557,7 @@ h1 {
 
 #newsLetter {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
     background-image: url(img/banner/b14.png);

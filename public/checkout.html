@@ -89,7 +89,8 @@
                     <label>
                         <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
                     </label>
-                    <button type="button" class="btn-primary" style="margin-top: 4rem;">Place order</button>
+                    <button type="button" class="btn-primary" style="margin-top: 4rem;" id="placeOrder">Place
+                        order</button>
                 </form>
             </div>
         </div>
@@ -102,30 +103,48 @@
             </div>
         </div>
     </div>
-<script>
-    let btn = document.querySelector('.btn-primary');
-    btn.addEventListener('click', ()=> {
-        let alertBox = document.querySelector('.cart-box');
-        let cartbox = document.querySelector('.row');
-        setTimeout(() => {
-
-            alertBox.classList.add('show');
-            cartbox.classList.remove('show');
-            localStorage.clear();
+    <!-- <script src="js/checkout.js"></script> -->
+    <script>
+        let btn = document.querySelector('.btn-primary');
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            let email = document.getElementById('email').value;
+            let cart = JSON.parse(localStorage.getItem('cart'));
+            let s = "";
+            for (let i = 0; i < cart.length; i++) {
+                s +=  "<img src='${cart[i].productImage}'><br> "+cart[i].productName+":"+cart[i].shortDes+"<br> Price: "+cart[i].price+"<br> Size: "+cart[i].size+"<br>"+"<hr>";
+            }
+            console.log(email);
+            Email.send({
+                SecureToken: "2504ab39-45a6-423f-b079-4592c0f38033",
+                To: email.toString(),
+                From: 'ajiteshgowlikar@gmail.com',
+                Subject: "Your order has been successfully placed",
+                Body: s
+            }).then(
+                message => alert(message)
+            )
+            let alertBox = document.querySelector('.cart-box');
+            let cartbox = document.querySelector('.row');
             setTimeout(() => {
-                sessionStorage.removeItem("cart");
-                location.replace("/");
+                alertBox.classList.add('show');
+                cartbox.classList.remove('show');
+                localStorage.clear();
+                setTimeout(() => {
+                    sessionStorage.removeItem("cart");
+                    location.replace("/");
+                }, 1000);
             }, 1000);
-        }, 1000);
 
-    });
-</script>
+        });
+    </script>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
     <script src="js/nav.js"></script>
     <script src="js/nav_popup.js"></script>
     <script src="js/home.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/checkout.js"></script>
 </body>
 
 </html>
