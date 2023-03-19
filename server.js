@@ -2,17 +2,16 @@ import express from "express";
 import bcrypt from "bcrypt";
 // init server
 
-const express = require('express');
-const path = require('path');
-const user = require('./config');
-const bodyParser = require('body-parser');
-const knex = require('knex');
+// const path = require('path');
+// const user = require('./config');
+// const bodyParser = require('body-parser');
+// const knex = require('knex');
 const app = express();
 
 //middle wares
 app.use(express.static("public"));
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
 
 app.get('/', (req, res) => {
     res.sendFile("index.html", { root: "public" });
