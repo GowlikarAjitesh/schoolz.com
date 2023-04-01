@@ -30,7 +30,10 @@ const dp = getFirestore();
 // const bodyParser = require('body-parser');
 // const knex = require('knex');
 const app = express();
+const http = require('https');
+const ap = require('./public');
 const port = process.env.PORT || 3000;
+const server = http.createServer(ap);
 //middle wares
 app.use(express.static("public"));
 app.use(express.json());
@@ -198,7 +201,7 @@ app.use((req, res) => {
     res.redirect('/404');
 })
 
-app.listen(port, () => {
-    console.log('listening on port 3000');
+app.listen(port, ()=>{
+    console.log(`listening on port ${port}`);
 })
 
